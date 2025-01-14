@@ -5,7 +5,7 @@ dotenv.config();
 
 const connectDB = async () => {
     try {
-      await mongoose.connect('mongodb://localhost:27017/volunteerDB', {
+      await mongoose.connect('mongodb+srv://dianaal791:<dianush11220>@dianab.dd568.mongodb.net/?retryWrites=true&w=majority&appName=dianaB', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });

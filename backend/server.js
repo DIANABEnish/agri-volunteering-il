@@ -11,7 +11,12 @@ require('dotenv').config(); // חשוב להוסיף את זה!
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:3003',
+  credentials: true
+}));
+
+
 app.use(express.json());
 
 // Connect to database
@@ -158,5 +163,6 @@ app.use((error, req, res, next) => {
 console.log('Registered routes:');
 printRoutes(app._router.stack);
 
+
 const PORT = process.env.PORT || 3003;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));

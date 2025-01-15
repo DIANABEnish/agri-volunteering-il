@@ -93,21 +93,25 @@ const FAQButton = styled.button`
   /* Match link responsive styles */
    @media screen and (min-width: 481px) and (max-width: 767px) {
     font-size: 1rem !important;
-    padding: 12px 0;
+    padding: 1px 0;
+    margin-bottom: 10px;
+    
   }
   @media screen and (min-width: 414px) and (max-width: 480px) {
     font-size: 0.8rem !important;
-    padding: 12px 0;
+    padding: 1px 0;
   }
 
   @media screen and (min-width: 375px) and (max-width: 413px) {
     font-size: 0.78rem !important;
-    padding: 12px 0;
+    padding: 1px 0;
+     margin-bottom: 10px;
+     
   }
   
   @media screen and (min-width: 320px) and (max-width: 374px) {
     font-size: 0.72rem !important;
-    padding: 12px 0;
+    padding: 1px 0;
   }
 
   /* Override any existing styles */
@@ -599,10 +603,10 @@ const MobileHeader = () => {
               
               {/* FAQ Section */}
               <FAQButton 
-              type="button"  // הוספת type="button" כדי למנוע שליחת טופס
+              type="button"  
               isOpen={isFAQOpen}
               onClick={(e) => {
-                e.preventDefault();  // מניעת ניווט
+                e.preventDefault();  
                 setIsFAQOpen(!isFAQOpen);
               }}
             >

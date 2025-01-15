@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from 'react';
-
-
 import axios from 'axios';
-
 import Header from '../comps/header';
 import Footer from '../comps/footer';
 import VolunteerMap from '../comps/volunteerMap';
 import VolunteerInfoSnippet1 from '../comps/volunteerInfoSnippet1';
 import VolunteerInfoSnippet2 from '../comps/volunteerInfoSnippet2';
 import VolunteerTitle from '../comps/volunteerTitle';
-
 import { MapPin, Users, Heart, HandHeart } from 'lucide-react';
 import { Button, Card, CardContent, CardMedia, Typography, Grid2 } from '@mui/material';
-
 import './HomePage.css';
-
 import ImageSlider from '../comps/imageSlider';
-
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -32,15 +25,18 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const Home = () => {
-  const [areas, setAreas] = useState([]);
-  const [selectedArea, setSelectedArea] = useState(null);
-  const [mapLocations, setMapLocations] = useState([]); // כל המיקומים למפה
+const [areas, setAreas] = useState([]);
+const [selectedArea, setSelectedArea] = useState(null);
+const [mapLocations, setMapLocations] = useState([]); // כל המיקומים למפה
 const [listLocations, setListLocations] = useState([]); // מיקומים מסוננים לרשימה
 const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [imagesLoaded, setImagesLoaded] = useState({});
+const [selectedLocation, setSelectedLocation] = useState(null);
+const [isLoading, setIsLoading] = useState(true);
+const [error, setError] = useState(null);
+const [imagesLoaded, setImagesLoaded] = useState({});
+
+
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3003';
 
     // Helper function to sort areas in the desired order
     const sortAreas = (areasArray) => {
@@ -69,7 +65,7 @@ const [isModalOpen, setModalOpen] = useState(false);
       mapLocations.forEach(loc => {
         if (loc.imageUrl) {
           const img = new Image();
-          img.src = `http://localhost:3003${loc.imageUrl}`;
+          img.src = img.src = `${apiUrl}${loc.imageUrl}`;
           img.onerror = () => console.error(`Failed to load image for ${loc.farmName}: ${img.src}`);
         }
       });
@@ -81,7 +77,7 @@ const [isModalOpen, setModalOpen] = useState(false);
       listLocations.forEach(loc => {
         if (loc.imageUrl) {
           const img = new Image();
-          img.src = `http://localhost:3003${loc.imageUrl}`;
+          img.src = `${apiUrl}${loc.imageUrl}`;
           img.onerror = () => console.error(`Failed to load image for ${loc.farmName}: ${img.src}`);
         }
       });
@@ -264,7 +260,7 @@ const [isModalOpen, setModalOpen] = useState(false);
                                    opacity: imagesLoaded[location._id] ? 1 : 0,
                                    transition: 'opacity 0.1s ease-in-out'
                                  }} 
-                                 image={`http://localhost:3003${location.imageUrl}`}
+                                 image={`${apiUrl}${location.imageUrl}`}
                                  alt={location.farmName || 'תמונת ההתנדבות'}
                                  onLoad={() => {
                                    setImagesLoaded(prev => ({
@@ -298,23 +294,23 @@ const [isModalOpen, setModalOpen] = useState(false);
               </div>
             )}
           </div>
-          <div class="image-section">
-  <div class="row">
-    <div class="image-item wide">
+          <div className="image-section">
+  <div className="row">
+    <div className="image-item wide">
       <img src="/images/HP4.jpg" alt="עבודה חקלאית בשדה" />
     </div>
-    <div class="image-item small-wide">
+    <div className="image-item small-wide">
       <img src="/images/3.png" alt="התנדבות בשטח" />
     </div>
   </div>
-  <div class="row">
-    <div class="image-item equal-wide">
+  <div className="row">
+    <div className="image-item equal-wide">
       <img src="/images/HP2.avif" alt="התנדבות בשטח" />
     </div>
-    <div class="image-item narrow">
+    <div className="image-item narrow">
       <img src="/images/HP1.jpg" alt="קהילת המתנדבים שלנו" />
     </div>
-    <div class="image-item equal-wide">
+    <div className="image-item equal-wide">
       <img src="/images/HP5.jpg" alt="פעילות קהילתית" />
     </div>
   </div>
@@ -350,6 +346,9 @@ const [isModalOpen, setModalOpen] = useState(false);
 ); };
 
 export default Home;
+
+
+
 
 
 

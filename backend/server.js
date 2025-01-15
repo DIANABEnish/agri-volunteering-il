@@ -10,9 +10,11 @@ require('dotenv').config(); // חשוב להוסיף את זה!
 
 const app = express();
 
-// Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3003',
+  origin: [
+    'http://localhost:3000',  // לפיתוח מקומי
+    process.env.CLIENT_URL,   // URL של הפרונטנד בפרודקשן
+  ].filter(Boolean),  // מסנן ערכים ריקים
   credentials: true
 }));
 
@@ -164,5 +166,10 @@ console.log('Registered routes:');
 printRoutes(app._router.stack);
 
 
+
 const PORT = process.env.PORT || 3003;
-app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
+// האזנה לשרת
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
+

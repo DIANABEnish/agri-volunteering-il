@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const VolunteerLocation = require('../models/volunteerLocation');
 
-mongoose.connect('mongodb+srv://dianaal791:<dianush11220>@dianab.dd568.mongodb.net/?retryWrites=true&w=majority&appName=dianaB', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {

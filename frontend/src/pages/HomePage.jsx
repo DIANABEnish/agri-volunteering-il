@@ -7,7 +7,7 @@ import VolunteerInfoSnippet1 from '../comps/volunteerInfoSnippet1';
 import VolunteerInfoSnippet2 from '../comps/volunteerInfoSnippet2';
 import VolunteerTitle from '../comps/volunteerTitle';
 import { MapPin, Users, Heart, HandHeart } from 'lucide-react';
-import { Button, Card, CardContent, CardMedia, Typography, Grid2 } from '@mui/material';
+import { Button, Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
 import './HomePage.css';
 import ImageSlider from '../comps/imageSlider';
 import L from 'leaflet';

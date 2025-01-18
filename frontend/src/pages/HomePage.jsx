@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 import axios from 'axios';
 import Header from '../comps/header';
 import Footer from '../comps/footer';
@@ -84,10 +85,10 @@ const [imagesLoaded, setImagesLoaded] = useState({});
     }
   }, [listLocations]);
 
-  const fetchAreas = async () => {
+ const fetchAreas = async () => {
     try {
-      const response = await axios.get('/api/volunteer-locations/areas');
-      // Sort the areas before setting them in state
+      // שימי לב שהוספנו את ה-API_BASE_URL לפני הנתיב
+      const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/areas`);
       const sortedAreas = sortAreas(response.data);
       setAreas(sortedAreas);
     } catch (error) {
@@ -95,32 +96,31 @@ const [imagesLoaded, setImagesLoaded] = useState({});
       setError('שגיאה בטעינת האזורים');
     }
   };
-
   
   const fetchAllLocations = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('/api/volunteer-locations/all');
+      const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/all`);
       if (response.data?.length > 0) {
         setMapLocations(response.data);
       }
     } catch (error) {
+      console.error('Error fetching locations:', error);
       setError('שגיאה בטעינת המיקומים');
     } finally {
       setIsLoading(false);
     }
   };
-
+  
   const handleAreaClick = async (area) => {
     setSelectedArea(area);
     try {
-      const response = await axios.get(`/api/volunteer-locations/locations/${area}`);
+      const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/locations/${area}`);
       setListLocations(response.data);
     } catch (error) {
       console.error('Error fetching locations:', error);
     }
   };
-
 
   const handleLocationClick = (location) => {
     setSelectedLocation(location);

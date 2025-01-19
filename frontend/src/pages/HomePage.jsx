@@ -269,9 +269,9 @@ const fetchAllLocations = async () => {
             {selectedArea && (
               <div className="selected-area-container">
                 <h2 className='volunteering-in'>התנדבות ב{selectedArea}</h2>
-                <Grid2 container spacing={3}>
+                <Grid container spacing={3}>
               {listLocations.map(location => ( // שימוש במיקומים המסוננים לרשימה
-                <Grid2 item xs={12} sm={6} md={4} key={location._id}>
+                <Grid item xs={12} sm={6} md={4} key={location._id}>
                       <Card className="location-card">
                         {location.imageUrl && (
                                  <CardMedia 
@@ -310,9 +310,9 @@ const fetchAllLocations = async () => {
                           <VolunteerInfoSnippet2 location={location} />
                         </CardContent>
                       </Card>
-                    </Grid2>
+                    </Grid>
                   ))}
-                </Grid2>
+                </Grid>
               </div>
             )}
           </div>

@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
 const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 import axios from 'axios';
+
 import Header from '../comps/header';
 import Footer from '../comps/footer';
 import VolunteerMap from '../comps/volunteerMap';
 import VolunteerInfoSnippet1 from '../comps/volunteerInfoSnippet1';
 import VolunteerInfoSnippet2 from '../comps/volunteerInfoSnippet2';
 import VolunteerTitle from '../comps/volunteerTitle';
+
 import { MapPin, Users, Heart, HandHeart } from 'lucide-react';
 import { Button, Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
+
 import './HomePage.css';
+
 import ImageSlider from '../comps/imageSlider';
+
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -26,21 +32,27 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const Home = () => {
-const [areas, setAreas] = useState([]);
-const [selectedArea, setSelectedArea] = useState(null);
-const [mapLocations, setMapLocations] = useState([]); // כל המיקומים למפה
+  const [areas, setAreas] = useState([]);
+  const [selectedArea, setSelectedArea] = useState(null);
+  const [mapLocations, setMapLocations] = useState([]); // כל המיקומים למפה
 const [listLocations, setListLocations] = useState([]); // מיקומים מסוננים לרשימה
 const [isModalOpen, setModalOpen] = useState(false);
-const [selectedLocation, setSelectedLocation] = useState(null);
-const [isLoading, setIsLoading] = useState(true);
-const [error, setError] = useState(null);
-const [imagesLoaded, setImagesLoaded] = useState({});
+  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [imagesLoaded, setImagesLoaded] = useState({});
 
 
   const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3003';
 
     // Helper function to sort areas in the desired order
     const sortAreas = (areasArray) => {
+      // בדיקה שהערך שהתקבל הוא אכן מערך
+      if (!Array.isArray(areasArray)) {
+        console.error('Expected array, got:', areasArray);
+        return [];
+      }
+      
       const orderMap = {
         'צפון': 1,
         'שרון': 2,
@@ -61,57 +73,66 @@ const [imagesLoaded, setImagesLoaded] = useState({});
   }, []);
 
 
+
   useEffect(() => {
-    if (mapLocations.length > 0) {
+    // בדיקה שמה שהתקבל הוא מערך ושיש בו נתונים
+    if (Array.isArray(mapLocations) && mapLocations.length > 0) {
       mapLocations.forEach(loc => {
-        if (loc.imageUrl) {
+        if (loc && loc.imageUrl) {
           const img = new Image();
-          img.src = img.src = `${apiUrl}${loc.imageUrl}`;
+          img.src = `${API_BASE_URL}${loc.imageUrl}`;
           img.onerror = () => console.error(`Failed to load image for ${loc.farmName}: ${img.src}`);
         }
       });
     }
   }, [mapLocations]);
-
+  
+  // תיקון useEffect עבור listLocations
   useEffect(() => {
-    if (listLocations.length > 0) {
+    // בדיקה שמה שהתקבל הוא מערך ושיש בו נתונים
+    if (Array.isArray(listLocations) && listLocations.length > 0) {
       listLocations.forEach(loc => {
-        if (loc.imageUrl) {
+        if (loc && loc.imageUrl) {
           const img = new Image();
-          img.src = `${apiUrl}${loc.imageUrl}`;
+          img.src = `${API_BASE_URL}${loc.imageUrl}`;
           img.onerror = () => console.error(`Failed to load image for ${loc.farmName}: ${img.src}`);
         }
       });
     }
   }, [listLocations]);
 
- const fetchAreas = async () => {
-    try {
-      // שימי לב שהוספנו את ה-API_BASE_URL לפני הנתיב
-      const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/areas`);
-      const sortedAreas = sortAreas(response.data);
-      setAreas(sortedAreas);
-    } catch (error) {
-      console.error('Error fetching areas:', error);
-      setError('שגיאה בטעינת האזורים');
-    }
-  };
-  
-  const fetchAllLocations = async () => {
-    setIsLoading(true);
-    try {
-      const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/all`);
-      if (response.data?.length > 0) {
-        setMapLocations(response.data);
-      }
-    } catch (error) {
-      console.error('Error fetching locations:', error);
-      setError('שגיאה בטעינת המיקומים');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  
+
+// תיקון fetchAreas
+const fetchAreas = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/areas`);
+    // בדיקה שהתקבל מערך
+    const areas = Array.isArray(response.data) ? response.data : [];
+    const sortedAreas = sortAreas(areas);
+    setAreas(sortedAreas);
+  } catch (error) {
+    console.error('Error fetching areas:', error);
+    setError('שגיאה בטעינת האזורים');
+  }
+};
+
+// תיקון fetchAllLocations
+const fetchAllLocations = async () => {
+  setIsLoading(true);
+  try {
+    const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/all`);
+    // בדיקה שהתקבל מערך
+    const locations = Array.isArray(response.data) ? response.data : [];
+    setMapLocations(locations);
+  } catch (error) {
+    console.error('Error fetching locations:', error);
+    setError('שגיאה בטעינת המיקומים');
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+
   const handleAreaClick = async (area) => {
     setSelectedArea(area);
     try {
@@ -121,6 +142,7 @@ const [imagesLoaded, setImagesLoaded] = useState({});
       console.error('Error fetching locations:', error);
     }
   };
+
 
   const handleLocationClick = (location) => {
     setSelectedLocation(location);
@@ -346,6 +368,11 @@ const [imagesLoaded, setImagesLoaded] = useState({});
 ); };
 
 export default Home;
+
+
+
+
+
 
 
 

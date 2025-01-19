@@ -6,17 +6,37 @@ const VolunteerRegistration = require('./models/volunteerRegistration');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs'); 
-require('dotenv').config(); // חשוב להוסיף את זה!
+require('dotenv').config();
 
 const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:3000',  // לפיתוח מקומי
-    process.env.CLIENT_URL,   // URL של הפרונטנד בפרודקשן
-  ].filter(Boolean),  // מסנן ערכים ריקים
-  credentials: true
+    'http://localhost:3000',           // Development
+    'https://mitnadvimbil.netlify.app', // Production Netlify domain
+    process.env.CLIENT_URL             // Backup from env variable
+  ].filter(Boolean),
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  maxAge: 86400 // CORS preflight cache for 24 hours
 }));
+
+// Additional CORS headers for extra security
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://mitnadvimbil.netlify.app');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Credentials', true);
+  
+  // Handle OPTIONS method
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
+  next();
+});
+
 
 
 app.use(express.json());
@@ -24,7 +44,6 @@ app.use(express.json());
 // Connect to database
 connectDB();
 
-// הוסף את האירועים של mongoose כאן
 mongoose.connection.on('connected', () => {
   console.log('Mongoose connected to db');
 });
@@ -172,4 +191,5 @@ const PORT = process.env.PORT || 3003;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 

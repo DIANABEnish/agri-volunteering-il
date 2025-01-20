@@ -12,14 +12,10 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:3000',           // Development
-    'https://mitnadvimbil.netlify.app', // Production Netlify domain
-    process.env.CLIENT_URL             // Backup from env variable
-  ].filter(Boolean),
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-  maxAge: 86400 // CORS preflight cache for 24 hours
+    'http://localhost:3000',
+    'https://mitnadvimbil.netlify.app'
+  ],
+  credentials: true
 }));
 
 // Additional CORS headers for extra security

@@ -18,6 +18,7 @@ import {
 import axios from "axios";
 import './volunteerInfoSnippet2.css';
 import RegistrationAlert from './alert';
+axios.defaults.baseURL = 'https://agri-volunteering-il.onrender.com';
 
 const CustomAlertDialog = ({ open, onClose, type, message }) => {
     const alertStyles = {
@@ -128,31 +129,61 @@ const VolunteerInfoSnippet = ({ location, isFromMap = false }) => {
         notes: '',
     });
 
-    // בדיקת הרשמה קיימת בעת פתיחת הדיאלוג
-    useEffect(() => {
-        const checkExistingRegistration = async () => {
-            if (location._id) {
-                try {
-                    // נסה לקבל את המייל מהלוקל סטורג'
-                    const savedEmail = localStorage.getItem(`registeredEmail_${location._id}`);
-                    if (savedEmail) {
-                        const response = await axios.get(`/api/check-registration/${location._id}/${savedEmail}`);
-                        if (response.data.isRegistered) {
-                            setIsRegistered(true);
-                            setRegisteredEmail(savedEmail);
-                            setFormData(prev => ({ ...prev, email: savedEmail }));
-                        }
-                    }
-                } catch (error) {
-                    console.error('Error checking initial registration:', error);
-                }
-            }
-        };
+  // בתחילת הקובץ, אחרי הimports
+axios.defaults.baseURL = 'https://agri-volunteering-il.onrender.com';
 
-        if (isOpen) {
-            checkExistingRegistration();
+// הפונקציה המעודכנת
+useEffect(() => {
+    const checkExistingRegistration = async () => {
+        if (location._id) {
+            try {
+                // נסה לקבל את המייל מהלוקל סטורג'
+                const savedEmail = localStorage.getItem(`registeredEmail_${location._id}`);
+                if (savedEmail) {
+                    // לוג לפני שליחת הבקשה
+                    console.log('Checking registration for:', {
+                        locationId: location._id,
+                        email: savedEmail,
+                        fullUrl: `${axios.defaults.baseURL}/api/check-registration/${location._id}/${savedEmail}`
+                    });
+
+                    const response = await axios.get(`/api/check-registration/${location._id}/${savedEmail}`, {
+                        withCredentials: true,
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    // לוג אחרי קבלת התשובה
+                    console.log('Registration check response:', response.data);
+
+                    if (response.data.isRegistered) {
+                        setIsRegistered(true);
+                        setRegisteredEmail(savedEmail);
+                        setFormData(prev => ({ ...prev, email: savedEmail }));
+                    }
+                }
+            } catch (error) {
+                // לוג מפורט של השגיאה
+                console.error('Error checking registration:', {
+                    message: error.message,
+                    response: error.response?.data,
+                    status: error.response?.status,
+                    config: {
+                        url: error.config?.url,
+                        method: error.config?.method,
+                        baseURL: error.config?.baseURL
+                    }
+                });
+            }
         }
-    }, [isOpen, location._id]);
+    };
+
+    if (isOpen) {
+        checkExistingRegistration();
+    }
+}, [isOpen, location._id]);
 
     // בדיקת הרשמה בעת שינוי המייל
     useEffect(() => {

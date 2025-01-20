@@ -131,7 +131,7 @@ const fetchAreas = async () => {
   const handleAreaClick = async (area) => {
     setSelectedArea(area);
     try {
-      const response = await axios.get(/api/volunteer-locations/locations/${area});
+      const response = await axios.get(/api/volunteer-locations/locations/${area}');
       setListLocations(response.data);
     } catch (error) {
       console.error('Error fetching locations:', error);

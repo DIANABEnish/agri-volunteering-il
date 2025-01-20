@@ -3,6 +3,9 @@ node_modules/
 
 # Environment variables
 .env
+uploads/
+dist/
+build/
 .env.local
 .env.development
 .env.test

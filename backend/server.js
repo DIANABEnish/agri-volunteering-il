@@ -12,26 +12,11 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:3000',
-    'https://mitnadvimbil.netlify.app'
-  ],
+    'http://localhost:3000',  // לפיתוח מקומי
+    process.env.CLIENT_URL,   // URL של הפרונטנד בפרודקשן
+  ].filter(Boolean),  // מסנן ערכים ריקים
   credentials: true
 }));
-
-// Additional CORS headers for extra security
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://mitnadvimbil.netlify.app');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Credentials', true);
-  
-  // Handle OPTIONS method
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-  
-  next();
-});
 
 
 
@@ -186,6 +171,7 @@ const PORT = process.env.PORT || 3003;
 // האזנה לשרת
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
+});
 });
 
 

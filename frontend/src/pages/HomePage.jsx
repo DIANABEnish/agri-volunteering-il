@@ -102,48 +102,41 @@ const [isModalOpen, setModalOpen] = useState(false);
   }, [listLocations]);
 
 
-// תיקון fetchAreas
 const fetchAreas = async () => {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/areas`);
-    // בדיקה שהתקבל מערך
-    const areas = Array.isArray(response.data) ? response.data : [];
-    const sortedAreas = sortAreas(areas);
-    setAreas(sortedAreas);
-  } catch (error) {
-    console.error('Error fetching areas:', error);
-    setError('שגיאה בטעינת האזורים');
-  }
-};
+    try {
+      const response = await axios.get('/api/volunteer-locations/areas');
+      // Sort the areas before setting them in state
+      const sortedAreas = sortAreas(response.data);
+      setAreas(sortedAreas);
+    } catch (error) {
+      console.error('Error fetching areas:', error);
+      setError('שגיאה בטעינת האזורים');
+    }
+  };
 
-// תיקון fetchAllLocations
-const fetchAllLocations = async () => {
-  setIsLoading(true);
-  try {
-    const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/all`);
-    // בדיקה שהתקבל מערך
-    const locations = Array.isArray(response.data) ? response.data : [];
-    setMapLocations(locations);
-  } catch (error) {
-    console.error('Error fetching locations:', error);
-    setError('שגיאה בטעינת המיקומים');
-  } finally {
-    setIsLoading(false);
-  }
-};
-
+  const fetchAllLocations = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get('/api/volunteer-locations/all');
+      if (response.data?.length > 0) {
+        setMapLocations(response.data);
+      }
+    } catch (error) {
+      setError('שגיאה בטעינת המיקומים');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleAreaClick = async (area) => {
     setSelectedArea(area);
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/volunteer-locations/locations/${area}`);
+      const response = await axios.get(/api/volunteer-locations/locations/${area});
       setListLocations(response.data);
     } catch (error) {
       console.error('Error fetching locations:', error);
     }
   };
-
-
   const handleLocationClick = (location) => {
     setSelectedLocation(location);
     setModalOpen(true);  

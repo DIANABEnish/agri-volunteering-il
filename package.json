@@ -2,9 +2,10 @@
     "name": "full-stack-pj",
     "version": "1.0.0",
     "scripts": {
+        "build": "cd frontend && npm install && npm run build && cd ../backend && npm install",
         "start": "cd backend && npm start",
         "install-backend": "cd backend && npm install",
-        "install-frontend": "cd client && npm install",
+        "install-frontend": "cd frontend && npm install",
         "install-all": "npm run install-backend && npm run install-frontend",
         "dev": "concurrently \"npm run start\" \"cd client && npm start\""
     },

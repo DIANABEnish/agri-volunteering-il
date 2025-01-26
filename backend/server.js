@@ -6,15 +6,18 @@ const VolunteerRegistration = require('./models/volunteerRegistration');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs'); 
-require('dotenv').config(); // חשוב להוסיף את זה!
+require('dotenv').config();
 
 const app = express();
 
-// Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3003',
+  origin: [
+    'http://localhost:3000',  // לפיתוח מקומי
+    process.env.CLIENT_URL,   // URL של הפרונטנד בפרודקשן
+  ].filter(Boolean),  // מסנן ערכים ריקים
   credentials: true
 }));
+
 
 
 app.use(express.json());
@@ -22,7 +25,6 @@ app.use(express.json());
 // Connect to database
 connectDB();
 
-// הוסף את האירועים של mongoose כאן
 mongoose.connection.on('connected', () => {
   console.log('Mongoose connected to db');
 });
@@ -164,5 +166,9 @@ console.log('Registered routes:');
 printRoutes(app._router.stack);
 
 
+
 const PORT = process.env.PORT || 3003;
-app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
+// האזנה לשרת
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});

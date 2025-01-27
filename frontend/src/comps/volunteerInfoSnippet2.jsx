@@ -21,7 +21,7 @@ import RegistrationAlert from './alert';
 import StyledTextField from './StyledTextField';
 import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
-
+const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3003';
 
 // בתחילת הקובץ, ליד ההגדרות האחרות
 const StyledCancelDialog = styled(Dialog)(({ theme }) => ({
@@ -194,7 +194,7 @@ const VolunteerInfoSnippet = ({ location, isFromMap = false }) => {
                     // נסה לקבל את המייל מהלוקל סטורג'
                     const savedEmail = localStorage.getItem(`registeredEmail_${location._id}`);
                     if (savedEmail) {
-                        const response = await axios.get(`/api/check-registration/${location._id}/${savedEmail}`);
+                        const response = await axios.get(`${apiUrl}/api/check-registration/${location._id}/${savedEmail}`);
                         if (response.data.isRegistered) {
                             setIsRegistered(true);
                             setRegisteredEmail(savedEmail);
@@ -217,7 +217,7 @@ const VolunteerInfoSnippet = ({ location, isFromMap = false }) => {
         const checkExistingRegistration = async () => {
             if (formData.email && location._id) {
                 try {
-                    const response = await axios.get(`/api/check-registration/${location._id}/${formData.email}`);
+                    const response = await axios.get(`${apiUrl}/api/check-registration/${location._id}/${formData.email}`);
                     if (response.data.isRegistered) {
                         setIsRegistered(true);
                         setRegisteredEmail(formData.email);
@@ -260,7 +260,7 @@ const VolunteerInfoSnippet = ({ location, isFromMap = false }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const checkResponse = await axios.get(`/api/check-registration/${location._id}/${formData.email}`);
+            const checkResponse = await axios.get(`${apiUrl}/api/check-registration/${location._id}/${formData.email}`);
             if (checkResponse.data.isRegistered) {
                 setAlert({
                     open: true,
@@ -270,7 +270,7 @@ const VolunteerInfoSnippet = ({ location, isFromMap = false }) => {
                 return;
             }
 
-            const response = await axios.post('/api/register-volunteer', {
+            const response = await axios.post(`${apiUrl}/api/register-volunteer`, {
                 ...formData,
                 locationId: location._id
             });
@@ -320,7 +320,7 @@ const VolunteerInfoSnippet = ({ location, isFromMap = false }) => {
                 return;
             }
 
-            await axios.delete(`/api/cancel-registration`, {
+            await axios.delete(`${apiUrl}/api/cancel-registration`, {
                 data: {
                     locationId: location._id,
                     email: emailToCancel
@@ -351,7 +351,7 @@ const VolunteerInfoSnippet = ({ location, isFromMap = false }) => {
 
     const checkRegistration = async (email) => {
         try {
-            const response = await axios.get(`/api/check-registration/${location._id}/${email}`);
+            const response = await axios.get(`${apiUrl}/api/check-registration/${location._id}/${email}`);
             return response.data.isRegistered;
         } catch (error) {
             console.error('Error checking registration:', error);

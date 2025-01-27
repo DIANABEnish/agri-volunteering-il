@@ -77,7 +77,7 @@ const FAQButton = styled.button`
 
    @media screen and (min-width: 375px) and (max-width: 413px){
       &::after{
-      margin-left: 120px;
+      margin-left: 150px;
       }
    }
 
@@ -104,8 +104,8 @@ const FAQButton = styled.button`
   }
 
   @media screen and (min-width: 375px) and (max-width: 413px) {
-    font-size: 0.95rem !important;
-    padding: 1px 0;
+    font-size: 1rem !important;
+    padding: 2px 0;
      margin-bottom: 10px;
      
   }
@@ -170,7 +170,7 @@ const SubMenuLink = styled(Link)`
   }
 
   @media screen and (min-width: 375px) and (max-width: 413px) {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   
   @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -181,7 +181,7 @@ const MobileNav = styled.header`
   @media screen and (max-width: 767px) {
     background: ${props => props.isHomePage 
       ? 'transparent' 
-      : 'linear-gradient(135deg, #b89861, #b08539)'};
+      : 'linear-gradient(135deg,rgb(153, 122, 69),rgb(158, 122, 60))'};
     backdrop-filter: ${props => props.isHomePage ? 'blur(10px)' : 'none'};
     border-bottom: ${props => props.isHomePage 
       ? '1px solid rgba(255, 255, 255, 0.1)' 
@@ -208,7 +208,7 @@ height: 70px;
  }
 
  @media screen and (min-width: 375px) and (max-width: 413px){
-  height: 60px;
+  height: 65px;
  }
  
  @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -245,9 +245,9 @@ const LogoContainer = styled.div`
 
   @media screen and (min-width: 375px) and (max-width: 413px){
     width: 95px;
-    height: 100px;
-    left: -5px;  
-    top: -25px;
+    height: 110px;
+    left: 5px;  
+    top: -30px;
   }
  
   @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -275,9 +275,9 @@ const ButtonsContainer = styled.div`
  }
 
  @media screen and (min-width: 375px) and (max-width: 413px){
- 
-   padding-left: 45px;
-   gap: 8px;
+   flex-direction: column;
+   padding-left: 30px;
+  
  }
  
  @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -292,7 +292,7 @@ const NavButton = styled(Link)`
   @media screen and (max-width: 767px) {
     padding: 8px 15px;
     background: ${props => props.isHomePage 
-      ? 'rgba(255, 255, 255, 0.2)' 
+      ? 'rgba(255, 255, 255, 0.92)' 
       : 'rgba(228, 213, 195, 0.4)'};
     border-radius: 6px;
     color: #f7f8fb;
@@ -302,16 +302,18 @@ const NavButton = styled(Link)`
     transition: all 0.3s ease;
     font-family: 'Open Sans', sans-serif;
 
-     -webkit-tap-highlight-color: transparent;
+    /* ביטול הדגשת רקע בעת לחיצה */
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select: none;
+    outline: none;
 
-
+    /* ביטול רקע ברירת מחדל בעת לחיצה */
     &:active {
       background: ${props => props.isHomePage 
         ? 'rgba(255, 255, 255, 0.2)' 
-        : 'rgba(228, 213, 195, 0.4)'};
+        : 'rgba(228, 213, 195, 0.4)'} !important;
     }
 
     &:hover {
@@ -320,26 +322,31 @@ const NavButton = styled(Link)`
         ? 'rgba(255, 255, 255, 0.3)' 
         : 'rgba(228, 213, 195, 0.6)'};
     }
+
+    /* ביטול הדגשת רקע בעת פוקוס */
+    &:focus {
+      outline: none;
+      background: ${props => props.isHomePage 
+        ? 'rgba(255, 255, 255, 0.92)' 
+        : 'rgba(228, 213, 195, 0.4)'};
+    }
   }
 
- @media screen and (min-width: 414px) and (max-width: 480px){
-   padding: 6px 12px;
-   font-size: 0.95rem
+  @media screen and (min-width: 414px) and (max-width: 480px){
+    padding: 6px 12px;
+    font-size: 0.95rem
+  }
 
- }
-
- @media screen and (min-width: 375px) and (max-width: 413px){
-    padding: 8px 8px;
-   font-size: 0.9rem
- }
+  @media screen and (min-width: 375px) and (max-width: 413px){
+    padding: 5px 15px;
+    font-size: 0.95rem
+  }
  
- @media screen and (min-width: 320px) and (max-width: 374px) {
+  @media screen and (min-width: 320px) and (max-width: 374px) {
     padding: 3px 9px;
-   font-size: 0.85rem
- }
-
+    font-size: 0.85rem
+  }
 `;
-
 const MenuButton = styled.button`
    @media screen and (max-width: 767px) {
     display: flex;
@@ -379,9 +386,9 @@ const MenuButton = styled.button`
  @media screen and (min-width: 375px) and (max-width: 413px){
  
 
-  width: 27px;
+  width: 30px;
     height: 25px;
-    right: 15px;
+    right: 25px;
 
  }
  
@@ -532,8 +539,8 @@ a:nth-of-type(5) { transition-delay: 0.3s; }
   padding: 15px;
     
     a {
-      font-size: 0.95rem;
-      padding: 12px 0;
+      font-size: 1rem;
+      padding: 17px 0;
     }
  }
  

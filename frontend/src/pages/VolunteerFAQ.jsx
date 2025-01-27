@@ -79,7 +79,7 @@ return (
     Copyright ©{' '}
     <a
       className="web-link"
-      "https://mitnadvimbil.netlify.app//"
+      href="https://mitnadvimbil.netlify.app//"
       target="_blank"
       rel="noopener noreferrer"
     >

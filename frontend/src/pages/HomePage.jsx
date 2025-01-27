@@ -6,14 +6,11 @@ import VolunteerMap from '../comps/volunteerMap';
 import VolunteerInfoSnippet1 from '../comps/volunteerInfoSnippet1';
 import VolunteerInfoSnippet2 from '../comps/volunteerInfoSnippet2';
 import VolunteerTitle from '../comps/volunteerTitle';
-
+const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3003';
 import { MapPin, Users, Heart, HandHeart } from 'lucide-react';
 import { Button, Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
-
 import './HomePage.css';
-
 import ImageSlider from '../comps/imageSlider';
-
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -38,9 +35,7 @@ const [isModalOpen, setModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [imagesLoaded, setImagesLoaded] = useState({});
-
-
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3003';
+  
 
     // Helper function to sort areas in the desired order
     const sortAreas = (areasArray) => {
@@ -90,7 +85,7 @@ const [isModalOpen, setModalOpen] = useState(false);
 
   const fetchAreas = async () => {
     try {
-      const response = await axios.get('/api/volunteer-locations/areas');
+       const response = await axios.get(`${apiUrl}/api/volunteer-locations/areas`);
       // Sort the areas before setting them in state
       const sortedAreas = sortAreas(response.data);
       setAreas(sortedAreas);
@@ -104,7 +99,7 @@ const [isModalOpen, setModalOpen] = useState(false);
   const fetchAllLocations = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get('/api/volunteer-locations/all');
+       const response = await axios.get(`${apiUrl}/api/volunteer-locations/all`);
       if (response.data?.length > 0) {
         setMapLocations(response.data);
       }
@@ -118,7 +113,7 @@ const [isModalOpen, setModalOpen] = useState(false);
   const handleAreaClick = async (area) => {
     setSelectedArea(area);
     try {
-      const response = await axios.get(`/api/volunteer-locations/locations/${area}`);
+      const response = await axios.get(`${apiUrl}/api/volunteer-locations/locations/${area}`);
       setListLocations(response.data);
     } catch (error) {
       console.error('Error fetching locations:', error);

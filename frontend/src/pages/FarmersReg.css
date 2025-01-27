@@ -2548,7 +2548,6 @@ button[type="submit"] {
      
 
 }
-
 @media screen and (min-width: 375px) and (max-width: 413px) {
 
   .farmer-reg .title {
@@ -2632,6 +2631,8 @@ button[type="submit"] {
         padding: 10px 10px 10px 10px;
         font-size:1.1rem !important;
         display: block;
+        background-color: rgb(226, 156, 65);
+        border-radius: 15px;
       }
 
       .steps-indicator {
@@ -2783,7 +2784,6 @@ button[type="submit"] {
 }
 
 }
-
 @media screen and (min-width: 320px) and (max-width: 374px) {
 
    .site-logo{

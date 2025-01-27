@@ -12,13 +12,11 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'http://localhost:3000',  // לפיתוח מקומי
-    process.env.CLIENT_URL,   // URL של הפרונטנד בפרודקשן
-  ].filter(Boolean),  // מסנן ערכים ריקים
+    'http://localhost:3003',
+    'https://mitnadvimbil.netlify.app'
+  ],
   credentials: true
 }));
-
-
 
 app.use(express.json());
 

@@ -1211,6 +1211,7 @@ font-size: 1rem !important;
   }
 
 
+  
   @media screen and (min-width: 375px) and (max-width: 413px){
 
       
@@ -1243,8 +1244,8 @@ font-size: 1rem !important;
 
 
 .volunteer-faq .faq-question {
-margin-top: -20px;
-font-size: 0.98rem;
+margin-top: -15px;
+font-size: 1.01rem;
 margin-right: 20px;
 
 }
@@ -1252,7 +1253,7 @@ margin-right: 20px;
 
 .volunteer-faq .faq-list {
 text-align: center;
-max-width: 320px;
+max-width: 330px;
 margin: 0 auto;
 margin-top: -30px;
 margin-bottom: 100px;
@@ -1260,7 +1261,7 @@ margin-bottom: 100px;
 }
 
 .volunteer-faq .faq-answer{
-font-size: 0.92rem;
+font-size: 0.97rem;
 margin-right: 20px;
 max-width: 260px;
 }
@@ -1268,11 +1269,12 @@ max-width: 260px;
 
 .volunteer-faq .contact-us{
 font-style: normal;
-font-size: 1em;
-max-width: 280px;
+font-size: 1.05em;
+max-width: 290px;
 margin-bottom: -30px;
 margin-top: 30px;
 padding: 10px 10px;
+margin-right: 10px;
 
 }
 
@@ -1305,7 +1307,6 @@ font-size: 0.95rem !important;
         margin-right:10px !important;
     }
     }
-
   @media screen and (min-width: 320px) and (max-width: 374px) {
 
           

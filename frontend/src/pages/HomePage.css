@@ -2875,6 +2875,7 @@ gap: 20px;
 }
 
 
+
 @media screen and (min-width: 375px) and (max-width: 413px){
 
    /* כותרת ראשית */
@@ -2897,7 +2898,7 @@ gap: 20px;
   /* פסקת פתיחה */
   .opening_paragraph {
     margin: -10px;
-    font-size: 0.85rem;
+    font-size: 0.92rem;
     max-width: 70%;
     text-align: center;
     margin-top: -32px;
@@ -2905,6 +2906,7 @@ gap: 20px;
 
   .opening_paragraph p{
     line-height: 1.2rem;
+    
   }
 
   
@@ -2952,7 +2954,7 @@ gap: 20px;
 }
 
 .map-headline {
-  font-size: 1.7rem;
+  font-size: 2rem;
   margin: 0;
   margin-top: -6.5rem;
   text-align: center;
@@ -2960,9 +2962,9 @@ gap: 20px;
 
 .map-text {
   margin: 0 15px;
-  text-align: center;
-  font-size: 0.9rem;
-  max-width: 50%;
+  text-align:justify;
+  font-size: 0.95rem;
+  max-width: 45%;
 }
 
 /* כרטיסי תכונות */
@@ -2989,13 +2991,13 @@ gap: 20px;
 
 
   .card-content h3 {
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-top: 0.3rem;
     
   }
 
   .card-content p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.1rem;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -3010,8 +3012,9 @@ gap: 20px;
   }
 
   .areas-headline {
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-align: center;
+    
   }
 
   .area-buttons {
@@ -3023,8 +3026,8 @@ gap: 20px;
 
  .home-page .area-buttons button {
   margin: 0.3rem;
-  font-size: 1rem;
-  padding: 0.4rem 1.2rem;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.4rem;
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* צל רך */
 }
 
@@ -3093,7 +3096,7 @@ gap: 20px;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 15px;
     row-gap: 25px !important;
-    padding: 30px 15px 30px 15px;
+    padding: 25px 10px 25px 10px;
     
     
   }
@@ -3171,7 +3174,6 @@ gap: 20px;
     }
 
 }
-
 
 @media screen and (min-width: 320px) and (max-width: 374px){
 

@@ -1266,7 +1266,7 @@ font-size: 1rem !important;
 
 .farmer-faq .faq-question {
 margin-top: -20px;
-font-size: 0.98rem;
+font-size: 1.01rem;
 margin-right: 20px;
 
 }
@@ -1282,7 +1282,7 @@ margin-bottom: 100px;
 }
 
 .farmer-faq .faq-answer{
-font-size: 0.92rem;
+font-size: 0.97rem;
 margin-right: 20px;
 max-width: 260px;
 }
@@ -1290,11 +1290,12 @@ max-width: 260px;
 
 .farmer-faq .contact-us{
 font-style: normal;
-font-size: 1rem;
+font-size: 1.05rem;
 max-width: 280px;
 margin-bottom: -30px;
 margin-top: 30px;
 padding: 10px 10px;
+margin-right: 10px;
 
 }
 

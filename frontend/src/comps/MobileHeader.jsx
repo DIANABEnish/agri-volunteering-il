@@ -580,7 +580,9 @@ const MobileHeader = () => {
       <>
         <MobileNav isHomePage={isHomePage}>
           <LogoContainer>
-            <img src="/images/logo.png" alt="Site Logo"  className='mobile-logo'/>
+             <Link to="/">
+              <img src="/images/logo.png" alt="Site Logo" className="site-logo" />
+             </Link>
           </LogoContainer>
   
           <ButtonsContainer>

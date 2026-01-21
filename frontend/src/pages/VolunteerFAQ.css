@@ -64,14 +64,19 @@ html, body {
 }
 
 .volunteer-faq .site-logo {
-  width: 125px;
-  max-width: 300px; /* הגדרת גודל מקסימלי ללוגו */
-  height: 135px !important; /* שומר על יחס הרוחב-גובה */
+  width: 125px !important;
+  height: 145px !important; /* שומר על יחס הרוחב-גובה */
   margin-right: 20px ;
-  margin-top: -30px;
+  margin-top: -40px;
   transition: transform 0.3s ease;
 
+  @media (max-width:768px) {
+    width: 105px !important;
+    height: 115px !important; 
   }
+
+  }
+
 
   
 .volunteer-faq .site-logo:hover {

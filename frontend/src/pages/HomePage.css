@@ -75,6 +75,11 @@ body.modal-open {
   margin-top: -40px;
   transition: transform 0.3s ease;
 
+  @media (max-width:768px) {
+    width: 105px !important;
+    height: 115px !important; 
+  }
+
   }
 
   
@@ -2853,7 +2858,7 @@ gap: 20px;
 
    /* כותרת ראשית */
    .page_title {
-    font-size: clamp(2.2rem, 4vw, 2.5rem);
+    font-size: clamp(2.3rem, 4vw, 2.5rem);
     margin: 30px 5% 1rem;
     text-align: center;
   }
@@ -2861,21 +2866,21 @@ gap: 20px;
   /* כותרת משנית */
   .change-title {
     margin: -20px auto;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center; 
 }
 
   /* פסקת פתיחה */
   .opening_paragraph {
     margin: -10px;
-    font-size: 0.9rem;
-    max-width: 70%;
+    font-size: 1rem;
+    max-width: 80%;
     text-align: center;
   
   }
 
   .opening_paragraph p{
-    line-height: 1.2rem;
+    line-height: 1.4rem;
     
   }
 

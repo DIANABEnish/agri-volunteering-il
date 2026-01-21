@@ -223,7 +223,7 @@ const LogoContainer = styled.div`
 
     img {
       width: 100%;
-      height: 110%;
+      height: 100%;
       object-fit: contain;
       transition: transform 0.3s ease;
 
@@ -234,22 +234,22 @@ const LogoContainer = styled.div`
   }
 
   @media screen and (min-width: 414px) and (max-width: 480px){
-    width: 100px;
-    height: 115px;
-    left: 5px;  
-    top: -30px;
+   
+    left: -15px;  
+    top: 20px;
+
+    
   }
 
   @media screen and (min-width: 375px) and (max-width: 413px){
-    width: 95px;
-    height: 110px;
-    left: 5px;  
-    top: -25px;
-  }
+    top: 20px;
+    left:-20px
+
+    }
  
   @media screen and (min-width: 320px) and (max-width: 374px) {
-    left: -10px;  
-    top: -25px;
+    left: -20px;  
+    top: 12px;
   }
 `;
 

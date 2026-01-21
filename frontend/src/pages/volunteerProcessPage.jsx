@@ -8,18 +8,6 @@ import Footer from '../comps/footer';
 
 
 const VolunteerRegProcess = () => {
-  const carouselImages = [
-   
-    '/images/pic1.jpg',
-    '/images/pic2.jpg',
-    '/images/pic4.jpg',
-    '/images/pic7.jpg',
-    '/images/pic5.jpg',
-    '/images/3.png',
-    '/images/7.png',
-   
-  ];
-
 
   return (
     <div className="process">
@@ -31,10 +19,6 @@ const VolunteerRegProcess = () => {
       <h2 className="title">תהליך ההרשמה</h2>
       </div>
         <p className="nav-pageDescription">עמוד זה יסייע לכם להבין את הצעדים הדרושים להרשמה להתנדבות. בכמה צעדים פשוטים, תוכלו לבחור את ההתנדבות המתאימה עבורכם, להרשם ולהצטרף לעשייה משמעותית לחיזוק החקלאות המקומית.</p>
-        
-        <div className="my-8">
-          <ImageCarousel images={carouselImages} />
-        </div>
         </div>
 
 

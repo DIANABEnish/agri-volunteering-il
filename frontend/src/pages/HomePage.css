@@ -18,12 +18,11 @@ body.modal-open {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-  justify-content: space-between; /* מרחיק בין הלוגו לניווט */
-  align-items: center; /* מיישר את הלוגו והניווט אנכית */
- 
+  justify-content: space-between; 
+  align-items: center; 
   padding: 10px 20px;
-  box-sizing: border-box; /* כולל את ה-padding בחישוב הגודל */
-  width: 100vw; /* יש לוודא שהרוחב מתפרש על כל רוחב החלון */
+  box-sizing: border-box; 
+  width: 100vw; 
   height: 120px;
   margin-top: -10px;
 
@@ -44,7 +43,7 @@ body.modal-open {
 .home-page .faq-title {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.1rem;
-  color: #ece5e5;
+  color: rgb(255, 253, 253);
   text-decoration: none;
   padding: 0.5rem 3rem;
   border-radius: 8px;
@@ -64,10 +63,8 @@ body.modal-open {
   flex: 0 1 auto; /* קופסה עבור הלוגו */
   display: flex;
   justify-content: flex-start;
-    position: absolute;
-    top: -22px;
-    right: 30px;
-    z-index: 1000; /* מבטיח שהלוגו יהיה מעל התוכן */
+  right: 30px;
+  z-index: 1000; /* מבטיח שהלוגו יהיה מעל התוכן */
   }
   
 
@@ -75,7 +72,7 @@ body.modal-open {
   width: 125px !important;
   height: 145px !important; /* שומר על יחס הרוחב-גובה */
   margin-right: 20px ;
-  margin-top: -12px;
+  margin-top: -40px;
   transition: transform 0.3s ease;
 
   }
@@ -123,28 +120,23 @@ body.modal-open {
   width: 100%;
 }
 
-
-
-
 .page_title {
-    font-family: "Open Sans",serif;
- 
+  font-family: "Open Sans",serif;
   font-weight: 700;
-   
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    color: #ece5e5;
-    text-shadow: 2px 2px 4px rgba(110, 104, 104, 0.5); /* צל לכתיבה */
-    margin: 80px 8% 1rem auto;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: rgb(255, 253, 253);
+  text-shadow: 2px 2px 4px rgba(110, 104, 104, 0.5); /* צל לכתיבה */
+  margin: 80px 8% 1rem auto;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     
 }
 
  .change-title {
 
-     margin-left: 1100px;
+    margin-left: 1100px;
     font-family: "Open Sans", sans-serif;
     font-size: 2rem;
-    color: rgb(230, 218, 218);
+    color: rgb(255, 253, 253);
     font-weight: 700;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -159,7 +151,7 @@ body.modal-open {
 
 .change-title-active {
     opacity: 1;
-    transform: translateY(0); /* חוזרת למקום */
+    transform: translateY(0); 
     
 }
 
@@ -167,16 +159,16 @@ body.modal-open {
 
 .opening_paragraph {
     font-family:'Open Sans', sans-serif;
-    font-weight: 500;
-    text-align:right; /* נוודא שהטקסט מיושר לימין */
-    font-size: 1.1rem;
-    max-width: 600px;
+    font-weight: 600;
+    text-align:right; 
+    font-size: 1.2rem;
+    max-width: 500px;
     line-height: 1.6;
-    margin-left: auto; /* דחוף את הטקסט לימין */
-    margin-right: 110px; /* רווח בצד ימין */
-    margin-top: -10px;
+    margin-left: auto; 
+    margin-right: 9rem;
+    margin-top: -20px !important;
     direction: rtl;
-    color: rgb(240, 236, 236);
+    color: rgb(255, 253, 253);
   
 }
 
@@ -207,13 +199,10 @@ body.modal-open {
 }
 
 .volunteer-map-container {
-  
   flex: 1;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
- 
-  
 }
 
       .map-text p {
@@ -526,7 +515,7 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 
 .row {
@@ -1261,8 +1250,8 @@ text-shadow: 2px 2px 2px rgba(100, 103, 100, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%; /* או כל רוחב קבוע אחר שמתאים לעיצוב שלך */
-  margin: 0 auto !important; /* ביטול המרג'ין השלילי */
+  width: 60%; 
+  margin: 0 auto !important; 
   position: absolute;
   left: 48%;
   transform: translateX(-50%);
@@ -1291,7 +1280,7 @@ text-shadow: 2px 2px 2px rgba(100, 103, 100, 0.2);
 
   .page_title {
     font-size: 4rem;
-    margin: 100px 10% 2rem auto;
+    margin: 60px 10% 1rem auto;
   }
 
  
@@ -1907,7 +1896,7 @@ gap: 20px;
 
 }
 
-@media screen and (min-width: 1281px) and (max-width: 1365px){
+@media screen and (min-width: 1280px) and (max-width: 1365px){
 
   .change-title{
     position:relative;
@@ -1937,7 +1926,6 @@ gap: 20px;
     padding: 0;
 }
 
-/* הוסיפי wrapper ראשי */
 .home-page {
     width: 100vw;
     max-width: 100%;
@@ -1948,7 +1936,7 @@ gap: 20px;
 }
 
 .home-page .site-header {
-  display: flex;
+      display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
@@ -1958,11 +1946,9 @@ gap: 20px;
 }
 
 .home-page .site-logo {
-  width: 115px !important;
-  height: 125px !important;
-  margin-top: -10px;
-  margin-right: -20px;
-  
+  width: 100px !important;
+  height: 110px !important;
+  margin-right: -10px;
 }
 
 .home-page .nav-site {
@@ -2282,26 +2268,24 @@ gap: 20px;
 @media screen and (min-width: 481px) and (max-width: 767px) {
   /* כותרת ראשית */
   .page_title {
-    font-size: clamp(2.9rem, 4vw, 3rem);
-    margin: 50px 5% 0.3rem;
+    font-size: clamp(2.4rem, 4vw, 3rem);
+    margin: 20px 5% 0.3rem;
     text-align: center;
   }
 
   /* כותרת משנית */
   .change-title {
-    margin: 0 auto;
-    font-size: 1.7rem;
+    margin: -20px auto 20px 0;
+    font-size: 1.4rem;
     text-align: center;
-  
-    
 }
 
-  /* פסקת פתיחה */
   .opening_paragraph {
     margin: -10px;
-    font-size: 1.05rem;
+    font-size: 1rem;
     text-align: center;
-    margin-top: -30px;
+    margin-top: -80px !important;
+   
   }
 
   .opening_paragraph p{
@@ -2665,7 +2649,7 @@ gap: 20px;
   
   .map-text {
     margin: 0 15px;
-    text-align: center;
+    text-align:justify;
     font-size: 0.97rem;
     max-width: 55%;
   }
@@ -2869,28 +2853,25 @@ gap: 20px;
 
    /* כותרת ראשית */
    .page_title {
-    font-size: clamp(2.4rem, 4vw, 3rem);
-    margin: 40px 5% 1rem;
+    font-size: clamp(2.2rem, 4vw, 2.5rem);
+    margin: 30px 5% 1rem;
     text-align: center;
   }
 
   /* כותרת משנית */
   .change-title {
-    margin: -10px auto;
-    font-size: 1.4rem;
-    
-    text-align: center;
-  
-    
+    margin: -20px auto;
+    font-size: 1.2rem;
+    text-align: center; 
 }
 
   /* פסקת פתיחה */
   .opening_paragraph {
     margin: -10px;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     max-width: 70%;
     text-align: center;
-    margin-top: -32px;
+  
   }
 
   .opening_paragraph p{
@@ -2898,14 +2879,10 @@ gap: 20px;
     
   }
 
-  
 .map-wrapper {
-
  width: 100% !important;
  margin-right: 1rem !important;
  height: 100% !important;
- 
-
 }
 
 .volunteer-map-section {

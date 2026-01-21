@@ -27,7 +27,9 @@ const Header = () => {
       ) : (
         <header className='site-header'>
           <div className="logo-container">
-            <img src="/images/logo.png" alt="Site Logo" className="site-logo" />
+            <Link to="/">
+             <img src="/images/logo.png" alt="Site Logo" className="site-logo" />
+          </Link>
           </div>
 
           <nav className={`nav-container ${isMenuOpen ? 'menu-open' : ''}`}>

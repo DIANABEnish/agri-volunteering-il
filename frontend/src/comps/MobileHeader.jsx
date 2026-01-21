@@ -46,13 +46,11 @@ const FAQButton = styled.button`
   align-items: center;
   position: relative;
 
-  /* הוספת מרווח מדומה בצד ימין כדי לאזן את החץ */
+ 
   &::before {
     content: '';
-     /* אותו רוחב כמו המרווח של החץ */
   }
 
-    /* עיצוב החץ עם מיקום מוחלט */
   &::after {
     content: '▼';
     font-size: 0.8em;
@@ -219,14 +217,13 @@ height: 70px;
 const LogoContainer = styled.div`
   @media screen and (max-width: 767px) {
     width: 100px;
-    height: 110px;
+    height: 100px;
     position: absolute;
     left: 5px;  
-    top: -30px;
-    
+
     img {
       width: 100%;
-      height: 120%;
+      height: 110%;
       object-fit: contain;
       transition: transform 0.3s ease;
 
@@ -240,19 +237,17 @@ const LogoContainer = styled.div`
     width: 100px;
     height: 115px;
     left: 5px;  
-    top: -35px;
+    top: -30px;
   }
 
   @media screen and (min-width: 375px) and (max-width: 413px){
     width: 95px;
     height: 110px;
     left: 5px;  
-    top: -30px;
+    top: -25px;
   }
  
   @media screen and (min-width: 320px) and (max-width: 374px) {
-    width: 100px ;
-    height: 90px;
     left: -10px;  
     top: -25px;
   }
@@ -262,8 +257,8 @@ const ButtonsContainer = styled.div`
   @media screen and (max-width: 767px) {
     display: flex;
     flex-direction: row;
-    gap: 12px;
-    margin: 0 auto;
+    gap: 7px;
+    margin: 10px auto  0 auto;
     padding-left: 40px;
   }
 
@@ -277,12 +272,13 @@ const ButtonsContainer = styled.div`
  @media screen and (min-width: 375px) and (max-width: 413px){
    flex-direction: column;
    padding-left: 30px;
-  
+   
  }
  
  @media screen and (min-width: 320px) and (max-width: 374px) {
  flex-direction: column;
    padding-left: 30px;
+   
  }
 
 `;

@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap');
+
+:root {
+  --color-primary: #3A4D39;
+  --color-secondary: #739072;
+  --color-accent: #AC6339;
+  --color-bg: #ECE3CE;
+  --color-text: #2C3333;
+  --text-mid: #5a5248;
+}
+
+.process {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+.process .registration_process {
+  padding: 50px 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.process .title-container {
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.process .title {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.process .title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-accent), var(--color-secondary));
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+.process .nav-pageDescription {
+  font-family: 'Heebo', sans-serif;
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.88;
+  position: relative;
+  z-index: 1;
+}
+
+.process .content_container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 64px 24px 88px;
+}
+
+.process .content_container h3 {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 700;
+  font-size: 1.65rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 0 0 48px;
+  position: relative;
+}
+
+.process .process_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: steps;
+}
+
+.process .list_item {
+  position: relative;
+  padding: 28px 60px 28px 72px;
+  margin-bottom: 14px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(115, 144, 114, 0.14);
+  box-shadow: 0 2px 10px rgba(44, 51, 51, 0.05);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  counter-increment: steps;
+}
+
+.process .list_item:hover {
+  box-shadow: 0 8px 28px rgba(58, 77, 57, 0.1);
+  transform: translateY(-2px);
+}
+
+.process .list_item::before {
+  content: counter(steps);
+  position: absolute;
+  right: 14px;
+  top: 28px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  color: #fff;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 700;
+  font-size: 0.93rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process .list_item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 41px;
+  bottom: -14px;
+  width: 2px;
+  height: 14px;
+  background: rgba(115, 144, 114, 0.22);
+}
+
+.process .list_item h4 {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  margin: 0 0 10px;
+  padding-right: 10px;
+    @media (max-width:480px) {
+    margin-right: -10px;
+    
+  }
+}
+
+.process .item_description {
+  font-family: 'Heebo', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.82;
+  margin: 0;
+  padding-right: 10px;
+    @media (max-width:480px) {
+    margin-right: -10px;
+    
+  }
+}
+
+.process .sub_list {
+  margin: 10px 0 0 0;
+  padding-right: 20px;
+  list-style: none;
+}
+
+.process .sub_list li {
+  font-family: 'Heebo', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  padding: 3px 0;
+  position: relative;
+}
+
+.process .sub_list li::before {
+  content: '✦';
+  position: absolute;
+  right: -18px;
+  color: var(--color-secondary);
+  font-size: 0.6rem;
+  top: 6px;
+}
+
+.process .thanks {
+  font-family: 'Heebo', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  margin-top: 56px;
+  padding: 32px 28px;
+  background: linear-gradient(135deg, rgba(58, 77, 57, 0.06), rgba(172, 99, 57, 0.06));
+  border-radius: 20px;
+  border: 1px dashed rgba(115, 144, 114, 0.35);
+  line-height: 1.65;
+}
+
+.process .footer-copyright {
+  font-family: 'Heebo', sans-serif;
+  background: #1e2f1d;
+  color: rgba(210, 220, 208, 0.5);
+  text-align: center;
+  padding: 12px 20px 14px;
+  font-size: 0.82rem;
+  direction: ltr;
+}
+
+.process .footer-copyright p { margin: 0; }
+
+.process .web-link {
+  color: rgba(184, 204, 183, 0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.process .web-link:hover { color: #b8ccb7; }
+
+.process .footer-copyright .hostages-icon {
+  width: 28px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .process .registration_process { padding: 80px 20px 48px; }
+  .process .title { font-size: 2.3rem; }
+  .process .nav-pageDescription { font-size: 0.97rem; }
+  .process .content_container { padding: 48px 16px 64px; }
+  
+  .process .list_item::before { right: 18px; top: 25px; width: 32px; height: 32px; font-size: 0.88rem; }
+  .process .list_item:not(:last-child)::after { right: 34px; }
+  .process .thanks { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .process .title { font-size: 1.95rem; }
+  .process .content_container h3 {margin-top: -30px;}
+  .process .content_container h3 { font-size: 1.4rem; }
+  .process .list_item { padding: 18px 50px 18px 54px; border-radius: 14px; }
+  .process .list_item::before { right: 10px; top: 18px; width: 28px; height: 28px; font-size: 0.82rem; }
+  .process .list_item:not(:last-child)::after { right: 27px; }
+  .process .list_item h4 { font-size: 0.97rem; }
+  .process .item_description { font-size: 0.88rem; }
+  .process .thanks { font-size: 1rem; padding: 24px 18px; }
+}

@@ -1,0 +1,184 @@
+.volunteerGeneralInfo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 15%;
+    margin-bottom: 1px;
+}
+
+.info-container {
+    display: flex;
+    margin-bottom: -20px;
+}
+
+.general-info {
+    font-family: 'Heebo', sans-serif;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 800;
+    color: var(--hp-primary);
+    text-shadow: 2px 2px 2px rgba(63, 64, 63, 0.2);
+    margin-top: 0;
+    padding-right: 2px;
+}
+
+.info-text {
+    border-right: 0.5px solid var(--hp-text-mid);
+    padding-right: 0px;
+    margin-right: 60px;
+}
+
+.general-steps {
+    font-size: 19px;
+    font-family: 'Heebo', sans-serif;
+    line-height: 1.6;
+    color: var(--hp-text-mid);
+    margin-right: 50px;
+}
+
+.volunteer-link {
+    font-size: 19px;
+    font-family: 'Heebo', sans-serif;
+    color: var(--hp-text-mid);
+}
+
+.volunteer-link:hover {
+    color: #505c4f;
+}
+
+.link-button {
+    margin-right: 60px;
+    background-color: transparent;
+    border: 0.5px solid var(--hp-text-mid);
+    padding: 10px 40px;
+    border-radius: 25px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    border-color: #739072;
+    transform: translateX(-2px);
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1123px) {
+    .info-container {
+        max-width: 700px;
+        margin-bottom: 2rem;
+    }
+
+    .general-info {
+        font-size: 2rem;
+    }
+
+    .general-steps {
+        font-size: 1rem !important;
+    }
+
+    .volunteer-link {
+        font-size: 1.1rem;
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .info-container {
+        max-width: 480px;
+    }
+
+    .general-info {
+        text-align: center;
+        font-size: 1.9rem;
+        margin-left: -40px;
+        margin-right: 20px;
+    }
+
+    .general-steps {
+        font-size: 1rem !important;
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+
+    .link-button {
+        margin-right: 20px;
+        max-width: 230px;
+        padding: 10px 10px;
+        border-radius: 30px;
+    }
+
+    .volunteer-link {
+        font-size: 1rem;
+        max-width: 150px;
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .volunteerGeneralInfo {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .general-info {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .info-text {
+        border-right: none;
+        border-top: 1px solid var(--hp-text-mid);
+        padding-right: 0;
+        margin-right: 0;
+        padding-top: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .general-steps {
+        font-size: 1rem;
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+        text-align: right;
+        line-height: 1.8;
+        list-style-position: inside;
+    }
+
+    .link-button {
+        margin-right: 0;
+        margin-left: 0;
+        width: 100%;
+        max-width: 260px;
+        padding: 10px 20px;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .volunteer-link {
+        font-size: 1rem;
+        text-align: center;
+        display: block;
+        width: 100%;
+        white-space: normal;
+    }
+}

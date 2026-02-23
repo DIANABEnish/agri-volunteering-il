@@ -1,0 +1,857 @@
+.volunteering{
+    line-height: 1rem;
+  
+  }
+
+/* ═══════════════════════════════════════════════════
+   UNIFIED BUTTON SYSTEM - פלטת הכפתורים האחידה
+   ═══════════════════════════════════════════════════ */
+
+/* --- כפתור ראשי: לפרטים והרשמה / הרשמה להתנדבות --- */
+.details-registration,
+.registretion-button {
+  font-family: 'Heebo', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #fefcf8 !important;
+  background: linear-gradient(135deg, #3A4D39, #739072) !important;
+  border: none !important;
+  padding: 8px 20px !important;
+  border-radius: 22px !important;
+  cursor: pointer !important;
+  transition: all 0.22s ease !important;
+  box-shadow: 0 2px 10px rgba(58, 77, 57, 0.25) !important;
+  letter-spacing: 0.01em !important;
+  margin-top: 8px !important;
+  max-width: 100% !important;
+  display: inline-block !important;
+}
+
+.details-registration:hover,
+.registretion-button:hover {
+  background: linear-gradient(135deg, #2e3d2d, #5a7059) !important;
+  box-shadow: 0 4px 16px rgba(58, 77, 57, 0.35) !important;
+  transform: translateY(-1px) !important;
+  color: #fefcf8 !important;
+}
+
+/* --- כפתור שליחת הרשמה (submit) --- */
+.register {
+  font-family: 'Heebo', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #fefcf8 !important;
+  background: linear-gradient(135deg, #3A4D39, #739072) !important;
+  border: none !important;
+  padding: 10px 32px !important;
+  border-radius: 22px !important;
+  cursor: pointer !important;
+  transition: all 0.22s ease !important;
+  box-shadow: 0 3px 14px rgba(58, 77, 57, 0.3) !important;
+  margin-top: 8px !important;
+  margin-left: 0 !important;
+  width: auto !important;
+  display: inline-block !important;
+}
+
+.register:hover {
+  background: linear-gradient(135deg, #2e3d2d, #5a7059) !important;
+  box-shadow: 0 5px 18px rgba(58, 77, 57, 0.4) !important;
+  transform: translateY(-1px) !important;
+  color: #fefcf8 !important;
+}
+
+.register:disabled {
+  background: linear-gradient(135deg, #a0afa0, #b8c8b8) !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* --- כפתור ביטול הרשמה (inline + בחלון) --- */
+.cancel-registration-inline,
+.cancel-registration-button {
+  font-family: 'Heebo', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: #8B5A3A !important;
+  background: transparent !important;
+  border: 1.5px solid rgba(139, 90, 58, 0.4) !important;
+  padding: 5px 16px !important;
+  border-radius: 18px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  margin-top: 4px !important;
+  display: inline-block !important;
+  width: auto !important;
+}
+
+.cancel-registration-inline:hover,
+.cancel-registration-button:hover {
+  background: rgba(139, 90, 58, 0.08) !important;
+  border-color: rgba(139, 90, 58, 0.7) !important;
+  color: #8B5A3A !important;
+}
+
+/* --- כפתור סגור --- */
+.close {
+  font-family: 'Heebo', sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: #7a8a79 !important;
+  background: transparent !important;
+  border: 1.5px solid rgba(115, 144, 114, 0.35) !important;
+  padding: 5px 20px !important;
+  border-radius: 18px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.close:hover {
+  background: rgba(115, 144, 114, 0.08) !important;
+  border-color: rgba(115, 144, 114, 0.6) !important;
+  color: #5a7059 !important;
+}
+
+/* --- כפתורי אישור/ביטול בדיאלוג אישור --- */
+.confirm-button {
+  font-family: 'Heebo', sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: #fefcf8 !important;
+  background: linear-gradient(135deg, #8B5A3A, #AC6339) !important;
+  border: none !important;
+  padding: 8px 22px !important;
+  border-radius: 18px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(139, 90, 58, 0.25) !important;
+}
+
+.confirm-button:hover {
+  background: linear-gradient(135deg, #7a4f33, #9b5630) !important;
+  box-shadow: 0 4px 12px rgba(139, 90, 58, 0.35) !important;
+  transform: translateY(-1px) !important;
+  color: #fefcf8 !important;
+}
+
+.cancel-button {
+  font-family: 'Heebo', sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: #7a8a79 !important;
+  background: transparent !important;
+  border: 1.5px solid rgba(115, 144, 114, 0.35) !important;
+  padding: 8px 22px !important;
+  border-radius: 18px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.cancel-button:hover {
+  background: rgba(115, 144, 114, 0.08) !important;
+  border-color: rgba(115, 144, 114, 0.6) !important;
+  color: #5a7059 !important;
+}
+
+
+  html {
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    position: relative;  /* במקום fixed */
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* הוסיפי את ההגדרות האלה עבור הדיאלוג */
+.MuiDialog-root {
+    position: absolute;
+}
+
+.MuiDialog-container {
+    height: auto;
+}
+  
+  body.modal-open {
+    padding-right: 17px; /* או הרוחב המדויק של סרגל הגלילה בדפדפן */
+  }
+
+  .locationName{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    padding-top: 0.1%;
+    color: #56725a ;
+    font-weight: bold;
+  
+  
+    
+  }
+
+  .type{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem ;
+    margin-top: -5px;
+    color: #56725a ;
+    font-weight: bold;
+   
+
+  }
+.details-and-reg{
+    background: linear-gradient(180deg,#f9faf8, #fdfffa, #fefff9);
+    border-radius: 20px !important;
+  }
+
+  .location-headline{
+    margin-right: -20px !important;
+    font-size: 2rem !important;
+    font-family: 'Roboto' , sans-serif !important;
+    color: #656b69;
+    font-weight: bold !important;
+
+  }
+
+  .location-des{
+    font-family: 'Roboto' , sans-serif;
+    color: #585a5a;
+    font-size: 1.1rem;
+    max-width: 500px;
+    height: 100%;
+   
+  }
+
+
+  .description2, .contactInfo{
+    font-size: 1.3rem !important;
+    font-family: 'Roboto' , sans-serif !important;
+    color: #585a5a;
+    font-weight: bold !important;
+    margin-top: 10px;
+  }
+
+  .contact p{
+    
+    font-family: 'Roboto' , sans-serif;
+    color: #626464;
+    font-size: 1.1rem;
+    line-height: 0.8rem;
+  }
+.cancel1{
+    text-align: center !important;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px !important;
+    margin-top: 10px;
+}
+/* עיצוב החלון הראשי */
+.details-and-reg {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* עיצוב כותרות בחלון */
+.location-headline {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-start !important;
+  margin-right: 17px;
+  gap: 16px;
+  padding: 16px;
+  background-color: #fff;
+}
+.reg-message{
+  color: #5b8c5b !important;
+    font-size: 13px !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: bold !important;
+    margin-top: -10px !important;
+    
+
+}
+.form-input .MuiInputBase-input {
+ text-align: right !important;
+  color: #555 !important;
+}
+
+.form-input .MuiInputLabel-root {
+
+  color: #888 !important;
+}
+
+.form-input .MuiInputLabel-shrink {
+  color: #555 !important;
+}
+
+
+.cancel-headline{
+  text-align: center !important;
+  margin-bottom: -10px !important;
+}
+.MuiInputBase-input{
+  font-size: 1rem !important;
+  text-align: right !important;
+  
+}
+
+.MuiDialogContent-root {
+  padding: 20px !important; /* פחות רווח פנימי */
+  
+}
+
+.cancel-email-input .MuiInputLabel-shrink {
+  transform: translate(0, -1.5rem) scale(0.75);
+  right: 0.75rem !important;
+  text-align: right !important;
+}
+
+
+.cancel-pop-up {
+  display: flex;
+  justify-content: center; /* ממרכז את התוכן */
+  gap: 20px; /* רווח בין הכפתורים */
+  margin-left: 27%;
+}
+
+.cancel-pop-up button {
+  background-color: transparent; /* ביטול צבע רקע */
+  border: none; /* ביטול גבול */
+  color: black; /* צבע טקסט */
+  padding: 8px 16px; /* ריווח פנימי */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* אנימציה חלקה */
+}
+
+.cancel-pop-up button:hover {
+  background-color: transparent; /* אין שינוי צבע רקע בעת ריחוף */
+  color: gray; /* שינוי קל בצבע הטקסט בעת ריחוף */
+}
+
+.cancel-pop-up button:active {
+  transform: scale(0.98); /* אפקט קל בלחיצה */
+}
+
+
+
+/*התאמות למסכים קטנים*/
+
+
+
+/* Tablets and larger phones (481px-767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .dialog-actions{
+    font-size: 0.8rem !important;
+  }
+ 
+
+  .MuiDialog-paper {
+    width: 70% !important; /* חלון צר יותר */
+    max-width: 400px !important;
+    
+  }
+
+  /* Adjust headings */
+  .location-headline {
+    margin-top: -20px !important;
+    margin-bottom: -15px !important;
+    font-size: 1.3rem !important;
+    margin-right: -4px !important;
+  }
+
+  .location-des{
+    font-size:  0.92rem !important;
+    max-width: 350px;
+    text-align: right;
+    margin-bottom: 5px; 
+    margin-top: -15px !important;
+  }
+
+  .registration-status-message{
+    font-size: 0.9rem !important;
+    margin-top: -15px !important;
+  }
+  .description2, .contactInfo {
+    font-size: 1.1rem !important;
+    margin-top: 6px;
+  }
+
+ 
+
+  .contact p {
+    font-size: 1rem;
+    line-height: 0.6rem;
+  }
+
+  /* Adjust buttons */
+  /* Adjust dialog actions */
+ 
+
+ 
+ 
+  .registration-form {
+    margin-top: -10px !important;
+    height: 360px;
+    margin: 0 auto;
+    direction: rtl;
+    text-align: right;
+}
+
+.form-input {
+    margin-bottom: 5px !important;
+    min-width: 200px !important;
+    max-width: 500px !important;
+    height: 55px;
+}
+
+.form-input .MuiInputBase-input {
+ 
+ 
+    font-size: 12px;
+    color: #555;
+}
+
+.form-input .MuiInputLabel-root {
+    font-size: 13px;
+    color: #888;
+}
+
+.form-input .MuiInputLabel-shrink {
+    color: #555;
+}
+
+.cancel-window{
+  
+  font-size: 1.3rem !important;
+  align-items: center;
+  text-align: center;
+  
+
+}
+
+.cancel-windowP{
+  font-size: 1rem !important;
+  text-align: center;
+  align-items: center;
+  margin-top: -10px !important;
+}
+
+.inputP{
+  font-size: 0.8rem !important;
+  margin-top: -10px !important;
+
+}
+
+.MuiInputLabel-root{
+  font-size: 1rem !important;
+}
+
+.MuiInputBase-input{
+  font-size: 1rem !important;
+}
+
+
+.MuiDialogContent-root {
+  padding: 20px !important; /* פחות רווח פנימי */
+}
+
+
+}
+
+/* Larger phones (414px-480px) */
+@media screen and (min-width: 414px) and (max-width: 480px) {
+  .dialog-actions{
+    font-size: 0.8rem !important;
+  }
+ 
+
+  .MuiDialog-paper {
+    width: 83% !important; /* חלון צר יותר */
+    min-width: 300px !important;
+    
+  }
+
+  /* Adjust headings */
+  .location-headline {
+    margin-top: -20px !important;
+    margin-bottom: -15px !important;
+    font-size: 1.3rem !important;
+    margin-right: -4px !important;
+  }
+
+  .location-des{
+    font-size:  0.92rem !important;
+    max-width: 350px;
+    text-align: right;
+    margin-bottom: 5px; 
+    margin-top: -15px !important;
+  }
+
+  .registration-status-message{
+    font-size: 0.9rem !important;
+    margin-top: -15px !important;
+  }
+  .description2, .contactInfo {
+    font-size: 1.1rem !important;
+    margin-top: 6px;
+  }
+
+ 
+
+  .contact p {
+    font-size: 1rem;
+    line-height: 0.6rem;
+  }
+
+  /* Adjust buttons */
+  /* Adjust dialog actions */
+ 
+
+ 
+ 
+  .registration-form {
+    margin-top: -10px !important;
+    height: 360px;
+    margin: 0 auto;
+    direction: rtl;
+    text-align: right;
+}
+
+.form-input {
+    margin-bottom: 5px !important;
+    min-width: 200px !important;
+    max-width: 400px !important;
+    height: 55px;
+}
+
+.form-input .MuiInputBase-input {
+ 
+ 
+    font-size: 12px;
+    color: #555;
+}
+
+.form-input .MuiInputLabel-root {
+    font-size: 13px;
+    color: #888;
+}
+
+.form-input .MuiInputLabel-shrink {
+    color: #555;
+}
+
+.cancel-window{
+  
+  font-size: 1.3rem !important;
+  align-items: center;
+  text-align: center;
+  
+
+}
+
+.cancel-windowP{
+  font-size: 1rem !important;
+  text-align: center;
+  align-items: center;
+  margin-top: -10px !important;
+}
+
+.inputP{
+  font-size: 0.8rem !important;
+  margin-top: -10px !important;
+
+}
+
+.MuiInputLabel-root{
+  font-size: 1rem !important;
+}
+
+.MuiInputBase-input{
+  font-size: 1rem !important;
+}
+
+
+.MuiDialogContent-root {
+  padding: 20px !important; /* פחות רווח פנימי */
+}
+
+
+
+}
+
+/* iPhone and similar (375px-413px) */
+@media screen and (min-width: 375px) and (max-width: 413px) {
+  .dialog-actions{
+    font-size: 0.8rem !important;
+  }
+ 
+
+  .MuiDialog-paper {
+    width: 80% !important; /* חלון צר יותר */
+    min-width: 300px !important;
+    
+  }
+
+  /* Adjust headings */
+  .location-headline {
+    margin-top: -20px !important;
+    margin-bottom: -15px !important;
+    font-size: 1.2rem !important;
+    margin-right: -4px !important;
+  }
+
+  .location-des{
+    font-size:  0.9rem !important;
+    max-width: 250px;
+    text-align: right;
+    margin-bottom: 5px; 
+    margin-top: -15px !important;
+  }
+
+
+
+
+
+  .registration-status-message{
+    font-size: 0.9rem !important;
+    margin-top: -15px !important;
+  }
+  .description2, .contactInfo {
+    font-size: 1rem !important;
+    margin-top: 6px;
+  }
+
+ 
+
+  .contact p {
+    font-size: 0.95rem;
+    line-height: 0.6rem;
+  }
+
+  /* Adjust buttons */
+  /* Adjust dialog actions */
+ 
+
+ 
+ 
+  .registration-form {
+    margin-top: -10px !important;
+    height: 360px;
+    margin: 0 auto;
+    direction: rtl;
+    text-align: right;
+}
+
+.form-input {
+    margin-bottom: 5px !important;
+    min-width: 200px !important;
+    max-width: 300px !important;
+    height: 55px;
+}
+
+
+
+.form-input .MuiInputBase-input {
+ 
+ 
+    font-size: 12px;
+    color: #555 !important;
+}
+
+.form-input .MuiInputLabel-root {
+    font-size: 13px;
+    color: #888;
+}
+
+.form-input .MuiInputLabel-shrink {
+    color: #555;
+}
+
+.cancel-window{
+  
+  font-size: 1.3rem !important;
+  align-items: center;
+  text-align: center;
+  
+
+}
+
+.cancel-windowP{
+  font-size: 1rem !important;
+  text-align: center;
+  align-items: center;
+  margin-top: -10px !important;
+}
+
+.inputP{
+  font-size: 0.8rem !important;
+  margin-top: -10px !important;
+
+}
+
+.MuiInputLabel-root{
+  font-size: 1rem !important;
+}
+
+.MuiInputBase-input{
+  font-size: 1rem !important;
+}
+
+
+.MuiDialogContent-root {
+  padding: 20px !important; /* פחות רווח פנימי */
+}
+
+
+
+
+}
+
+/* Smaller phones (320px-374px) */
+@media screen and (min-width: 320px) and (max-width: 374px) {
+
+ 
+  .dialog-actions{
+    font-size: 0.8rem !important;
+  }
+  /* Adjust dialog size */
+  .MuiDialog-paper {
+    max-width: 300px !important;
+    min-width: 240px !important;
+    max-height: 500px !important;
+    margin: 4px !important;
+  }
+
+  /* Adjust headings */
+  .location-headline {
+    margin-top: -20px !important;
+    margin-bottom: -15px !important;
+    font-size: 1rem !important;
+    margin-right: -4px !important;
+  }
+
+  .location-des{
+    font-size:  0.75rem !important;
+    max-width: 250px;
+    text-align: right;
+    margin-bottom: 5px; 
+    margin-top: -15px !important;
+  }
+
+
+
+
+
+  .registration-status-message{
+    font-size: 0.75rem !important;
+    margin-top: -15px !important;
+  }
+  .description2, .contactInfo {
+    font-size: 0.9rem !important;
+    margin-top: 6px;
+  }
+
+ 
+
+  .contact p {
+    font-size: 0.8rem;
+    line-height: 0.6rem;
+  }
+
+  /* Adjust buttons */
+  /* Adjust dialog actions */
+ 
+
+ 
+ 
+  .registration-form {
+    margin-top: -10px !important;
+    height: 360px;
+    margin: 0 auto;
+    direction: rtl;
+    text-align: right;
+}
+
+.form-input {
+    margin-bottom: 5px !important;
+    min-width: 200px !important;
+    max-width: 300px !important;
+    height: 55px;
+}
+
+.form-input .MuiInputBase-input {
+ 
+ 
+    font-size: 12px;
+    color: #555;
+}
+
+.form-input .MuiInputLabel-root {
+    font-size: 13px;
+    color: #888;
+}
+
+.form-input .MuiInputLabel-shrink {
+    color: #555;
+}
+
+
+.cancel-headline{
+  margin-top: 0px !important;
+  margin-bottom: -20px !important;
+}
+
+.cancel-faq{
+  font-size: 0.9rem !important;
+ 
+}
+
+
+
+.MuiInputLabel-root{
+  font-size: 0.9rem !important;
+}
+
+.MuiInputBase-input{
+  font-size: 0.9rem !important;
+}
+
+
+
+.MuiDialog-paper {
+  width: 72% !important; /* חלון צר יותר */
+  min-width: 260px !important;
+  
+}
+
+.MuiDialogContent-root {
+  padding: 20px !important; /* פחות רווח פנימי */
+}
+
+
+
+.cancel-pop-up{
+  margin-top: -20px !important;
+}
+
+
+
+
+}

@@ -624,9 +624,9 @@ html, body {
 }
 
 @media (max-width: 480px) {
-  .farmer-reg .title { font-size: 1.95rem; padding-top: 40px; }
+  .farmer-reg .title { font-size: 2rem; padding-top: 10px; }
   .farmer-reg .title2 { font-size: 0.95rem; }
-  .farmer-reg .opening-par { font-size: 0.93rem; }
+  .farmer-reg .opening-par { font-size: 0.93rem; margin-bottom: 20px; }
   .registration-form-section {  overflow-y: scroll;padding:  20px 14px; border-radius: 14px; }
   .form-section h3 { font-size: 1.1rem; }
   .form-group label { font-size: 0.88rem; }

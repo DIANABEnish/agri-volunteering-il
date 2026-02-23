@@ -50,7 +50,6 @@ return (
     
         <Header/>
       <h2>רוצים להתנדב? כל התשובות כאן</h2>
-      <img src="/images/faq2.png"  className="faq-image" />
       <div className="faq-list">
         {faqData.map((item, index) => (
           <div key={index} className="faq-item">

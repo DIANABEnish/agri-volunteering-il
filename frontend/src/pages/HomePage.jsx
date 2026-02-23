@@ -161,40 +161,60 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="feature-cards">
+                  {/* desktop-only feature cards — hidden on mobile via CSS */}
+                  <div className="feature-cards feature-cards--desktop">
                     <div className="first-card">
                       <div className="feature-card">
                         <div className="card-content">
                           <h3>מצאו הזדמנויות בקרבתכם</h3>
                           <p>גלו מגוון אפשרויות התנדבות באזורכם</p>
                         </div>
-                        <div className="card-icon">
-                          <MapPin size={22} />
-                        </div>
+                        <div className="card-icon"><MapPin size={22} /></div>
                       </div>
                     </div>
-
                     <div className="feature-card">
                       <div className="card-content">
                         <h3>הצטרפו לקהילה תומכת</h3>
                         <p>היו חלק ממשפחת המתנדבים שלנו</p>
                       </div>
-                      <div className="card-icon">
-                        <Users size={22} />
-                      </div>
+                      <div className="card-icon"><Users size={22} /></div>
                     </div>
-
                     <div className="feature-card">
                       <div className="card-content">
                         <h3>צרו השפעה אמיתית</h3>
                         <p>כל פעולה קטנה יוצרת שינוי גדול</p>
                       </div>
-                      <div className="card-icon">
-                        <HandHeart size={22} />
-                      </div>
+                      <div className="card-icon"><HandHeart size={22} /></div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* mobile-only feature cards — outside the map container so no overflow issues */}
+          <div className="feature-cards-mobile-section">
+            <div className="feature-cards feature-cards--mobile">
+              <div className="feature-card">
+                <div className="card-content">
+                  <h3>מצאו הזדמנויות בקרבתכם</h3>
+                  <p>גלו מגוון אפשרויות התנדבות באזורכם</p>
+                </div>
+                <div className="card-icon"><MapPin size={22} /></div>
+              </div>
+              <div className="feature-card">
+                <div className="card-content">
+                  <h3>הצטרפו לקהילה תומכת</h3>
+                  <p>היו חלק ממשפחת המתנדבים שלנו</p>
+                </div>
+                <div className="card-icon"><Users size={22} /></div>
+              </div>
+              <div className="feature-card">
+                <div className="card-content">
+                  <h3>צרו השפעה אמיתית</h3>
+                  <p>כל פעולה קטנה יוצרת שינוי גדול</p>
+                </div>
+                <div className="card-icon"><HandHeart size={22} /></div>
               </div>
             </div>
           </div>

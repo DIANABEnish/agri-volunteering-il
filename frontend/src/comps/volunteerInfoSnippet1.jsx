@@ -18,7 +18,7 @@ const VolunteerInfoSnippet1 = () =>{
             
         <button className="link-button">
         <Link to="/volunteer-page" className="volunteer-link">
-        למידע מפורט על תהליך ההתנדבות
+        למידע נוסף
       </Link>
         </button>
        

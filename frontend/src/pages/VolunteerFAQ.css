@@ -49,16 +49,6 @@ html, body {
   border-radius: 2px;
 }
 
-.volunteer-faq .faq-image {
-  display: block;
-  height: 190px;
-  width: auto;
-  object-fit: cover;
-  margin: 28px auto 0;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(44, 51, 51, 0.1);
-}
-
 .volunteer-faq .faq-list {
   max-width: 680px;
   margin: 44px auto 88px;
@@ -138,6 +128,7 @@ html, body {
   padding: 12px 24px 22px 24px;
   background: #fff;
   border-radius: 0 0 16px 16px;
+   margin-top: 15px;
   animation: fadeSlideDown 0.22s ease;
 }
 
@@ -199,7 +190,7 @@ html, body {
 }
 
 @media (max-width: 480px) {
-  .volunteer-faq h2 { font-size: 1.95rem; margin-top: 72px; padding: 0 1rem; }
+  .volunteer-faq h2 { font-size: 1.95rem; margin-top: 40px; padding: 0 20px; }
   .volunteer-faq .faq-image { height: 120px; }
   .volunteer-faq .faq-question { text-align: right; font-size: 0.91rem; padding: 13px 14px; }
   .volunteer-faq .contact-us { font-size: 0.87rem; padding: 14px 16px; max-width: calc(100% - 32px); }

@@ -5,7 +5,6 @@
     "scripts": {
         "start": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
-
     },
     "keywords": [],
     "author": "Diana Benish",
@@ -13,13 +12,15 @@
     "description": "",
     "dependencies": {
         "axios": "^1.7.7",
+        "cloudinary": "^2.9.0",
         "cors": "^2.8.5",
         "dotenv": "^16.4.5",
         "express": "^4.21.0",
         "formidable": "^3.5.2",
         "mongoose": "^8.6.3",
         "multer": "^1.4.5-lts.1",
-        "nodemailer": "^6.9.16"
+        "multer-storage-cloudinary": "^2.2.1",
+        "nodemailer": "^8.0.1"
     },
     "devDependencies": {
         "@types/nodemailer": "^6.4.16"

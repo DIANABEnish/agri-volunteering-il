@@ -140,7 +140,7 @@
 
     .info-text {
         border-right: none;
-        border-top: 1px solid var(--hp-text-mid);
+        border-top: 1px solid transparent ;
         padding-right: 0;
         margin-right: 0;
         padding-top: 1rem;
@@ -149,6 +149,16 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .general-info::after {
+        content: '';
+        display: block;
+        width: 48px;      
+        height: 1px;
+        background: linear-gradient(to left, var(--hp-accent), var(--hp-secondary));
+        border-radius: 2px;
+        margin: 10px auto 0;  
+}
 
     .general-steps {
         font-size: 1rem;

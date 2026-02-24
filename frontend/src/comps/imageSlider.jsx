@@ -82,9 +82,9 @@ const SliderContent = styled.div`
 `;
 
 const images = [
-  '/images/background2.jpg',
-  '/images/background3.jpg',
-  '/images/background4.jpg',
+  '/images/BG3.jpg',
+  '/images/BG4.jpg',
+  '/images/BG2.png',
 ];
 
 const ImageSlider = ({ children }) => {

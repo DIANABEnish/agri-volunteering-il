@@ -127,26 +127,27 @@ const CtaGhost = styled(Link)`
   &:visited, &:focus { text-decoration: none; outline: none; }
 `;
 
+/* בתוך MobileHeader.jsx ב-Styled Components */
+
 const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top: 10px;
+  position: relative; 
+  z-index: 400; 
 
   img {
-    width: 160px;
-    height: auto;
+   
+    width: 250px; 
+    height: 200px; 
     object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 6px 20px rgba(0,0,0,0.22));
-    animation: ${logoEntrance} 0.55s ease both;
-    transition: transform 0.25s ease;
-    &:hover { transform: scale(1.04); }
-
+    
     @media (max-width: 380px) {
-     width: 140px;
-     height: auto;
-  }
+      width: 250px;
+      height: 200px;
+    }
   }
 `;
 

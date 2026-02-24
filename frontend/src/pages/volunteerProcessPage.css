@@ -185,10 +185,6 @@
   color: var(--color-primary);
   text-align: center;
   margin-top: 56px;
-  padding: 32px 28px;
-  background: linear-gradient(135deg, rgba(58, 77, 57, 0.06), rgba(172, 99, 57, 0.06));
-  border-radius: 20px;
-  border: 1px dashed rgba(115, 144, 114, 0.35);
   line-height: 1.65;
 }
 

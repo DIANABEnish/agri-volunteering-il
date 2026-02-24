@@ -17,6 +17,7 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -160,6 +161,7 @@ body.modal-open {
   max-width: 600px;
   width: 100%;
   text-align: right;
+  opacity: 0.9 !important;
 
   @media (max-width:480px) {
     padding-top: 5rem;
@@ -174,7 +176,7 @@ body.modal-open {
   color: rgba(250, 250, 250, 0.9);
   margin: 0 0 20px 0;
   min-height: 36px;
-  opacity: 0;
+  opacity: 0.9 !important;
   transform: translateY(10px);
   transition: opacity 1.5s ease, transform 1.5s ease;
   letter-spacing: 0.02em;
@@ -199,6 +201,7 @@ body.modal-open {
   direction: rtl;letter-spacing: 0.02rem;
   color: rgba(254, 254, 254, 0.9);
   margin: 0;
+  opacity: 0.9 !important;
 }
 
 .opening_paragraph p {
@@ -213,6 +216,11 @@ body.modal-open {
 .home-page .image-slider-wrapper,
 .home-page > div > main > div:first-child {
   position: relative;
+}
+
+.home-page .image-slider-wrapper {
+  min-height: 100vh; 
+  background: var(--hp-bg); 
 }
 
 
@@ -431,7 +439,7 @@ body.modal-open {
   content: '';
   display: block;
   width: 40px;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(to right, var(--hp-accent), var(--hp-secondary));
   margin: 12px auto 0;
   border-radius: 2px;
@@ -1041,18 +1049,17 @@ body.modal-open {
     display: none;
   }
 
+ 
   .bento-tall,
   .bento-sm-1,
   .bento-sm-2,
   .bento-wide {
-    flex: 0 0 72vw;
-    width: 72vw;
-    height: 240px;
-    grid-column: unset;
-    grid-row: unset;
-    border-radius: 18px;
-    scroll-snap-align: start;
-  }
+    flex: 0 0 85vw !important;
+    width: 85vw !important;
+    height: 250px !important; 
+    scroll-snap-align: center;
+  
+}
 
   .bento-tall {
     flex: 0 0 80vw;

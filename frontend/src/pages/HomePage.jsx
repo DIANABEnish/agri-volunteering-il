@@ -286,6 +286,18 @@ const Home = () => {
               <div className="bento-item bento-wide">
                 <img src="/images/HP2.avif" alt="התנדבות בשטח" />
               </div>
+              <div className="bento-item bento-wide">
+                <img src="/images/G1.jpg" alt="התנדבות בשטח" />
+              </div>
+              <div className="bento-item bento-wide">
+                <img src="/images/G2.jpg" alt="התנדבות בשטח" />
+              </div>
+              <div className="bento-item bento-wide">
+                <img src="/images/G3.jpg" alt="התנדבות בשטח" />
+                <div className="bento-item bento-wide">
+                <img src="/images/G4.jpg" alt="התנדבות בשטח" />
+              </div>
+              </div>
             </div>
           </div>
 

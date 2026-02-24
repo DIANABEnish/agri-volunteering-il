@@ -50,7 +50,7 @@ html, body {
   content: '';
   display: block;
   width: 48px;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(to right, var(--color-accent), var(--color-secondary));
   margin: 14px auto 0;
   border-radius: 2px;

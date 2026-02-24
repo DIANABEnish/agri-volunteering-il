@@ -39,7 +39,6 @@ const MobileNav = styled.header`
     : '0 1px 20px rgba(44, 51, 51, 0.08)'};
 `;
 
-/* Hamburger — right side (RTL start) */
 const MenuButton = styled.button`
   flex-shrink: 0;
   display: flex;
@@ -69,7 +68,7 @@ const MenuButton = styled.button`
   &.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); width: 100%; }
 `;
 
-/* CTA group — centered */
+
 const CtaGroup = styled.div`
   flex: 1;
   display: flex;
@@ -127,8 +126,6 @@ const CtaGhost = styled(Link)`
   &:visited, &:focus { text-decoration: none; outline: none; }
 `;
 
-/* בתוך MobileHeader.jsx ב-Styled Components */
-
 const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -137,6 +134,7 @@ const LogoContainer = styled.div`
   margin-top: 10px;
   position: relative; 
   z-index: 400; 
+  opacity: 0.9 !important;
 
   img {
    

@@ -43,7 +43,7 @@
   content: '';
   display: block;
   width: 48px;
-  height: 2px;
+  height: 1px;
   background: linear-gradient(to right, var(--color-accent), var(--color-secondary));
   margin: 16px auto 0;
   border-radius: 2px;
@@ -227,7 +227,7 @@
 }
 
 @media (max-width: 480px) {
-  .process .title { font-size: 2rem; margin-top: -20px; }
+  .process .title { font-size: 2rem; margin-top: -30px; }
   .process .content_container h3 {margin-top: -30px;}
   .process .content_container h3 { font-size: 1.4rem; }
   .process .list_item { padding: 18px 50px 18px 54px; border-radius: 14px; }

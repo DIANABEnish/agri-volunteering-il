@@ -131,21 +131,22 @@ const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 10px;
-  position: relative; 
-  z-index: 400; 
-  opacity: 0.9 !important;
 
   img {
-   
-    width: 250px; 
-    height: 200px; 
+    width: 160px;
+    height: auto;
     object-fit: contain;
-    
+    display: block;
+    filter: drop-shadow(0 6px 20px rgba(0,0,0,0.22));
+    animation: ${logoEntrance} 0.55s ease both;
+    transition: transform 0.25s ease;
+    &:hover { transform: scale(1.04); }
+    opacity: 0.9 !important;
+
     @media (max-width: 380px) {
-      width: 250px;
-      height: 200px;
-    }
+     width: 140px;
+     height: auto;
+  }
   }
 `;
 

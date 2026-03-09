@@ -5,10 +5,6 @@ import VolunteerInfoSnippet2 from './volunteerInfoSnippet2';
 import '../comps/VolunteerMapSection.css';
 import { Icon } from 'leaflet';
 
-// ─── MapController ────────────────────────────────────────────────────────────
-// Repositions the popup wrapper via CSS transform instead of panning the map.
-// Panning fights maxBoundsViscosity={1.0} and causes the bounce/snap effect.
-// Moving the DOM element directly has zero interaction with map bounds.
 const MapController = () => {
   const map = useMap();
 
@@ -31,19 +27,19 @@ const MapController = () => {
         let nudgeX = 0;
         let nudgeY = 0;
 
-        // Clipped above the map
+     
         if (popupRect.top < mapRect.top + padding) {
           nudgeY = mapRect.top + padding - popupRect.top;
         }
-        // Clipped below the map
+  
         if (popupRect.bottom > mapRect.bottom - padding) {
           nudgeY = -(popupRect.bottom - mapRect.bottom + padding);
         }
-        // Clipped on the right
+    
         if (popupRect.right > mapRect.right - padding) {
           nudgeX = -(popupRect.right - mapRect.right + padding);
         }
-        // Clipped on the left
+    
         if (popupRect.left < mapRect.left + padding) {
           nudgeX = mapRect.left + padding - popupRect.left;
         }
@@ -166,8 +162,8 @@ const VolunteerMap = ({ locations, onLocationSelected }) => {
 
   // ─── SVG marker icon with green gradient — responsive size ──────────────────
   const isMobile = window.innerWidth <= 768;
-  const iconW = isMobile ? 22 : 32;
-  const iconH = isMobile ? 29 : 42;
+  const iconW = isMobile ? 22 : 26;
+  const iconH = isMobile ? 29 : 35;
 
   const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 42" width="${iconW}" height="${iconH}">
     <defs>

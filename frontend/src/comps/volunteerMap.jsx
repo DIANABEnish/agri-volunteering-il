@@ -162,8 +162,8 @@ const VolunteerMap = ({ locations, onLocationSelected }) => {
 
   // ─── SVG marker icon with green gradient — responsive size ──────────────────
   const isMobile = window.innerWidth <= 768;
-  const iconW = isMobile ? 22 : 26;
-  const iconH = isMobile ? 29 : 35;
+  const iconW = isMobile ? 22 : 20;
+  const iconH = isMobile ? 29 : 25;
 
   const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 42" width="${iconW}" height="${iconH}">
     <defs>
